@@ -1,12 +1,14 @@
 {
   "name": "@ahm0xc/utils",
   "version": "0.0.1",
+  "main": "dist/index.js",
   "description": "A collection of utility functions",
   "scripts": {
     "build": "tsc",
-    "ci": "npm run build && npm run fmt:check",
+    "ci": "npm run build && npm run fmt:check && npm run exports:check",
     "fmt": "prettier --write .",
-    "fmt:check": "prettier --check ."
+    "fmt:check": "prettier --check .",
+    "exports:check": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
   },
   "license": "MIT",
   "keywords": [
@@ -27,6 +29,7 @@
   ],
   "type": "module",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.4",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
   }
