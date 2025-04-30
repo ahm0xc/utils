@@ -1,0 +1,23 @@
+{
+  "name": "@ahm0xc/utils",
+  "version": "0.0.1",
+  "description": "A collection of utility functions",
+  "license": "MIT",
+  "keywords": [
+    "utils",
+    "typescript"
+  ],
+  "homepage": "https://github.com/ahm0xc/utils",
+  "bugs": {
+    "url": "https://github.com/ahm0xc/utils/issues"
+  },
+  "author": "Ahmed <ahmed@ahm0xc.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahm0xc/utils.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module"
+}
