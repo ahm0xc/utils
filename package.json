@@ -10,7 +10,8 @@
     "fmt:check": "prettier --check .",
     "exports:check": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "test": "vitest run",
-    "test:dev": "vitest"
+    "test:dev": "vitest",
+    "prepare": "husky"
   },
   "license": "MIT",
   "keywords": [
@@ -32,6 +33,7 @@
   "type": "module",
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.4",
+    "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
     "vitest": "^3.1.2"
