@@ -11,7 +11,9 @@
     "exports:check": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "test": "vitest run",
     "test:dev": "vitest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci"
   },
   "license": "MIT",
   "keywords": [
@@ -33,6 +35,7 @@
   "type": "module",
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.4",
+    "@changesets/cli": "^2.29.2",
     "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
