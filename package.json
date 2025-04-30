@@ -2,6 +2,10 @@
   "name": "@ahm0xc/utils",
   "version": "0.0.1",
   "description": "A collection of utility functions",
+  "scripts": {
+    "build": "tsc",
+    "ci": "npm run build"
+  },
   "license": "MIT",
   "keywords": [
     "utils",
@@ -19,5 +23,8 @@
   "files": [
     "dist"
   ],
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
 }
