@@ -5,10 +5,12 @@
   "description": "A collection of utility functions",
   "scripts": {
     "build": "tsc",
-    "ci": "npm run build && npm run fmt:check && npm run exports:check",
+    "ci": "npm run build && npm run fmt:check && npm run exports:check && npm run test",
     "fmt": "prettier --write .",
     "fmt:check": "prettier --check .",
-    "exports:check": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
+    "exports:check": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "test": "vitest run",
+    "test:dev": "vitest"
   },
   "license": "MIT",
   "keywords": [
@@ -31,6 +33,7 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.4",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
   }
 }
