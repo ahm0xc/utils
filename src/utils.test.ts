@@ -1,6 +1,6 @@
 import { test, expect } from "vitest";
 
-import { delay, capitalize, isEmpty, randomInt } from "./utils.js";
+import { delay, capitalize, isEmpty, randomInt, chunkArray } from "./utils.js";
 
 test("delay", async () => {
   const start = Date.now();
@@ -26,4 +26,11 @@ test("randomInt", () => {
   const result = randomInt(min, max);
   expect(result).toBeGreaterThanOrEqual(min);
   expect(result).toBeLessThanOrEqual(max);
+});
+
+test("chunkArray", () => {
+  const array = [1, 2, 3, 4, 5];
+  const size = 2;
+  const result = chunkArray(array, size);
+  expect(result).toEqual([[1, 2], [3, 4], [5]]);
 });

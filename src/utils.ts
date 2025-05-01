@@ -79,3 +79,24 @@ export const isEmpty = (value: any): boolean =>
  */
 export const randomInt = (min: number, max: number): number =>
   Math.floor(Math.random() * (max - min + 1)) + min;
+
+/**
+ * Splits an array into chunks of the specified size.
+ *
+ * @template T - The type of elements in the array.
+ * @param {T[]} arr - The array to split into chunks.
+ * @param {number} size - The size of each chunk.
+ * @returns {T[][]} An array of chunks.
+ *
+ * @example
+ * // Returns [[1, 2], [3, 4], [5]]
+ * chunkArray([1, 2, 3, 4, 5], 2);
+ *
+ * @example
+ * // Returns [['a', 'b', 'c'], ['d', 'e', 'f']]
+ * chunkArray(['a', 'b', 'c', 'd', 'e', 'f'], 3);
+ */
+export const chunkArray = <T>(arr: T[], size: number): T[][] =>
+  Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
+    arr.slice(i * size, i * size + size),
+  );
