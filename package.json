@@ -7,12 +7,24 @@
   "description": "A collection of utility functions",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "default": "./dist/index.js"
     },
     "./dom": {
+      "types": "./dist/dom/index.d.ts",
       "import": "./dist/dom/index.js",
-      "types": "./dist/dom/index.d.ts"
+      "default": "./dist/dom/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/index.d.ts"
+      ],
+      "dom": [
+        "./dist/dom/index.d.ts"
+      ]
     }
   },
   "sideEffects": false,
