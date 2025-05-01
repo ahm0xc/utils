@@ -117,3 +117,20 @@ export const chunkArray = <T>(arr: T[], size: number): T[][] =>
  * uniqueArray(['a', 'b', 'a', 'c', 'b']);
  */
 export const uniqueArray = <T>(arr: T[]): T[] => [...new Set(arr)];
+
+/**
+ * Calculates the sum of all numbers in an array.
+ *
+ * @param {number[]} arr - The array of numbers to sum.
+ * @returns {number} The sum of all numbers in the array.
+ *
+ * @example
+ * // Returns 6
+ * sumArray([1, 2, 3]);
+ *
+ * @example
+ * // Returns 0
+ * sumArray([-5, 5]);
+ */
+export const sumArray = (arr: number[]): number =>
+  arr.reduce((sum, num) => sum + num, 0);

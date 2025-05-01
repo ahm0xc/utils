@@ -7,6 +7,7 @@ import {
   randomInt,
   chunkArray,
   uniqueArray,
+  sumArray,
 } from "./utils.js";
 
 test("delay", async () => {
@@ -46,4 +47,10 @@ test("uniqueArray", () => {
   const array = [1, 2, 2, 3, 1];
   const result = uniqueArray(array);
   expect(result).toEqual([1, 2, 3]);
+});
+
+test("sumArray", () => {
+  const array = [1, 2, 3];
+  const result = sumArray(array);
+  expect(result).toEqual(6);
 });
