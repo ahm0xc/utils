@@ -1,5 +1,11 @@
 # @ahm0xc/utils
 
+## 0.4.0
+
+### Minor Changes
+
+- bb00ed8: add trycatch utility
+
 ## 0.3.2
 
 ### Patch Changes
