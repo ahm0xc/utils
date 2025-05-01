@@ -61,3 +61,21 @@ export const isEmpty = (value: any): boolean =>
   (typeof value === "string" && value.trim() === "") ||
   (Array.isArray(value) && value.length === 0) ||
   (typeof value === "object" && Object.keys(value).length === 0);
+
+/**
+ * Generates a random integer between min and max (inclusive).
+ *
+ * @param {number} min - The minimum value (inclusive).
+ * @param {number} max - The maximum value (inclusive).
+ * @returns {number} A random integer between min and max.
+ *
+ * @example
+ * // Returns a random number between 1 and 10
+ * randomInt(1, 10);
+ *
+ * @example
+ * // Returns a random number between -5 and 5
+ * randomInt(-5, 5);
+ */
+export const randomInt = (min: number, max: number): number =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
