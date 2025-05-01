@@ -1,5 +1,11 @@
 # @ahm0xc/utils
 
+## 0.4.1
+
+### Patch Changes
+
+- 0debd09: update readme and add trycatch utility docs
+
 ## 0.4.0
 
 ### Minor Changes
