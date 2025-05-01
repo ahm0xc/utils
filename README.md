@@ -19,6 +19,7 @@ npm install @ahm0xc/utils
   - [uniqueArray](#uniquearrayarr-t-t)
   - [sumArray](#sumarrayarr-number-number)
   - [shuffleArray](#shufflearrayarr-t-t)
+  - [tryCatch](#trycatchpromiset-promisetrytcatchresultt-e)
 - [DOM Utilities](#dom-utilities)
   - [select](#selectselector-string-parent-elementdocument-element--null)
   - [selectAll](#selectallselector-string-parent-elementdocument-element)
@@ -207,6 +208,33 @@ import { shuffleArray } from "@ahm0xc/utils";
 
 // Returns a shuffled version of the array
 shuffleArray([1, 2, 3, 4, 5]);
+```
+
+### tryCatch<T, E = Error>(promise: Promise<T>): Promise<[T | null, E | null]>
+
+A utility function for handling promises with a clean try-catch pattern, avoiding try-catch blocks.
+
+**Parameters:**
+
+- `promise` - The promise to handle.
+
+**Returns:**
+
+- A promise that resolves to a tuple of [data, error], where either data or error will be null.
+
+**Example:**
+
+```typescript
+import { tryCatch } from "@ahm0xc/utils";
+
+// Fetch data with error handling
+const [data, error] = await tryCatch(fetch("https://api.example.com/data"));
+
+if (error) {
+  console.error("Error fetching data:", error);
+} else {
+  console.log("Data:", data);
+}
 ```
 
 ## DOM Utilities
