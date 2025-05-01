@@ -158,3 +158,42 @@ export const shuffleArray = <T>(arr: T[]): T[] => {
   }
   return copy;
 };
+
+/**
+ * Type representing the result of a try-catch operation.
+ * Either contains a successful result [data, null] or an error [null, error].
+ *
+ * @template T - The type of the successful result.
+ * @template E - The type of the error, defaults to Error.
+ */
+export type TryCatchResult<T, E = Error> = [T, null] | [null, E];
+
+/**
+ * Safely executes a promise and returns a tuple containing either the result or an error.
+ * This utility helps avoid try-catch blocks throughout the codebase.
+ *
+ * @template T - The type of the successful result.
+ * @template E - The type of the error, defaults to Error.
+ * @param {Promise<T>} promise - The promise to execute.
+ * @returns {Promise<TryCatchResult<T, E>>} A promise that resolves to a tuple containing either [data, null] or [null, error].
+ *
+ * @example
+ * // Handle API request without try-catch
+ * const [data, error] = await tryCatch(fetchUserData(userId));
+ * if (error) {
+ *   console.error('Failed to fetch user data:', error);
+ *   return;
+ * }
+ * // Use data safely
+ * console.log(data);
+ */
+export async function tryCatch<T, E = Error>(
+  promise: Promise<T>,
+): Promise<TryCatchResult<T, E>> {
+  try {
+    const data = await promise;
+    return [data, null];
+  } catch (error) {
+    return [null, error as E];
+  }
+}

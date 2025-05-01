@@ -7,4 +7,6 @@ export {
   uniqueArray,
   sumArray,
   shuffleArray,
+  tryCatch,
+  type TryCatchResult,
 } from "./utils.js";

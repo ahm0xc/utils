@@ -9,6 +9,7 @@ import {
   uniqueArray,
   sumArray,
   shuffleArray,
+  tryCatch,
 } from "./utils.js";
 
 test("delay", async () => {
@@ -73,4 +74,14 @@ test("shuffleArray", () => {
     }
   }
   expect(atLeastOneDifferentOrder).toBe(true);
+});
+
+test("tryCatch", async () => {
+  const [firstData, firstError] = await tryCatch(Promise.resolve("success"));
+  expect(firstData).toBe("success");
+  expect(firstError).toBeNull();
+
+  const [_, secondError] = await tryCatch(Promise.reject(new Error("error")));
+  expect(secondError).toBeInstanceOf(Error);
+  expect(secondError?.message).toBe("error");
 });
