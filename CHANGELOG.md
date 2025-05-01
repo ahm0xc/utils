@@ -1,5 +1,11 @@
 # @ahm0xc/utils
 
+## 0.5.1
+
+### Patch Changes
+
+- c3feac4: fix getFavicon utility
+
 ## 0.5.0
 
 ### Minor Changes
