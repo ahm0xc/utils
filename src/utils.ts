@@ -134,3 +134,27 @@ export const uniqueArray = <T>(arr: T[]): T[] => [...new Set(arr)];
  */
 export const sumArray = (arr: number[]): number =>
   arr.reduce((sum, num) => sum + num, 0);
+
+/**
+ * Shuffles the elements of an array using the Fisher-Yates algorithm.
+ *
+ * @template T - The type of elements in the array.
+ * @param {T[]} arr - The array to shuffle.
+ * @returns {T[]} A new array with shuffled elements.
+ *
+ * @example
+ * // Returns a shuffled version of the array
+ * shuffleArray([1, 2, 3, 4, 5]);
+ *
+ * @example
+ * // Returns a shuffled version of the array
+ * shuffleArray(['a', 'b', 'c', 'd']);
+ */
+export const shuffleArray = <T>(arr: T[]): T[] => {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i]!, copy[j]!] = [copy[j]!, copy[i]!];
+  }
+  return copy;
+};

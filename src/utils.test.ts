@@ -8,6 +8,7 @@ import {
   chunkArray,
   uniqueArray,
   sumArray,
+  shuffleArray,
 } from "./utils.js";
 
 test("delay", async () => {
@@ -53,4 +54,23 @@ test("sumArray", () => {
   const array = [1, 2, 3];
   const result = sumArray(array);
   expect(result).toEqual(6);
+});
+
+test("shuffleArray", () => {
+  const array = [1, 2, 3, 4, 5];
+  const result = shuffleArray(array);
+  // Verify result is not the same object reference
+  expect(result).not.toBe(array);
+  // Verify result contains the same elements
+  expect(result.sort()).toEqual([...array].sort());
+  // Run multiple times to ensure different order with high probability
+  let atLeastOneDifferentOrder = false;
+  for (let i = 0; i < 10; i++) {
+    const shuffled = shuffleArray(array);
+    if (JSON.stringify(shuffled) !== JSON.stringify(array)) {
+      atLeastOneDifferentOrder = true;
+      break;
+    }
+  }
+  expect(atLeastOneDifferentOrder).toBe(true);
 });
