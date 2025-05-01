@@ -215,13 +215,14 @@ export async function tryCatch<T, E = Error>(
  * const largeFavicon = getFavicon('github.com', { size: 64 });
  */
 export const getFavicon = (
-  domainName: string,
+  url: string,
   options: { size?: number } = {},
 ): string => {
   const size = options.size || 32;
-
-  // Ensure the domain name is properly formatted (remove protocol if present)
-  const formattedDomain = domainName.replace(/^(https?:\/\/)?(www\.)?/, "");
-
-  return `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${formattedDomain}&size=${size}`;
+  try {
+    const origin = new URL(url).origin;
+    return `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${origin}&size=${size}`;
+  } catch (error) {
+    return "";
+  }
 };

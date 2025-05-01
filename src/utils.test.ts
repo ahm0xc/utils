@@ -88,8 +88,14 @@ test("tryCatch", async () => {
 });
 
 test("getFavicon", () => {
-  const favicon = getFavicon("example.com");
+  const favicon = getFavicon("https://example.com/some-route");
   expect(favicon).toBe(
-    "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=example.com&size=32",
+    "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://example.com&size=32",
+  );
+  const favicon2 = getFavicon("some random string");
+  expect(favicon2).toBe("");
+  const favicon3 = getFavicon("https://www.example.com/some-route/");
+  expect(favicon3).toBe(
+    "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.example.com&size=32",
   );
 });
