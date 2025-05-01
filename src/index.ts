@@ -9,4 +9,5 @@ export {
   shuffleArray,
   tryCatch,
   type TryCatchResult,
+  getFavicon,
 } from "./utils.js";

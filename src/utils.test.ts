@@ -10,6 +10,7 @@ import {
   sumArray,
   shuffleArray,
   tryCatch,
+  getFavicon,
 } from "./utils.js";
 
 test("delay", async () => {
@@ -84,4 +85,11 @@ test("tryCatch", async () => {
   const [_, secondError] = await tryCatch(Promise.reject(new Error("error")));
   expect(secondError).toBeInstanceOf(Error);
   expect(secondError?.message).toBe("error");
+});
+
+test("getFavicon", () => {
+  const favicon = getFavicon("example.com");
+  expect(favicon).toBe(
+    "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=example.com&size=32",
+  );
 });

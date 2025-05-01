@@ -197,3 +197,31 @@ export async function tryCatch<T, E = Error>(
     return [null, error as E];
   }
 }
+
+/**
+ * Retrieves a favicon URL for a given domain using Google's favicon service.
+ *
+ * @param {string} domainName - The domain name to get the favicon for (e.g., 'example.com').
+ * @param {Object} options - Configuration options.
+ * @param {number} [options.size=32] - The size of the favicon in pixels (16, 32, 64, etc.).
+ * @returns {string} The URL to the favicon image.
+ *
+ * @example
+ * // Get default size (32px) favicon for example.com
+ * const favicon = getFavicon('example.com');
+ *
+ * @example
+ * // Get a 64px favicon for github.com
+ * const largeFavicon = getFavicon('github.com', { size: 64 });
+ */
+export const getFavicon = (
+  domainName: string,
+  options: { size?: number } = {},
+): string => {
+  const size = options.size || 32;
+
+  // Ensure the domain name is properly formatted (remove protocol if present)
+  const formattedDomain = domainName.replace(/^(https?:\/\/)?(www\.)?/, "");
+
+  return `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${formattedDomain}&size=${size}`;
+};

@@ -20,6 +20,7 @@ npm install @ahm0xc/utils
   - [sumArray](#sumarrayarr-number-number)
   - [shuffleArray](#shufflearrayarr-t-t)
   - [tryCatch](#trycatchpromiset-promisetrytcatchresultt-e)
+  - [getFavicon](#getfavicondomainname-string-options--size-number---string)
 - [DOM Utilities](#dom-utilities)
   - [select](#selectselector-string-parent-elementdocument-element--null)
   - [selectAll](#selectallselector-string-parent-elementdocument-element)
@@ -235,6 +236,35 @@ if (error) {
 } else {
   console.log("Data:", data);
 }
+```
+
+### getFavicon(domainName: string, options?: { size?: number }): string
+
+Generates a Google favicon URL for a given domain name.
+
+**Parameters:**
+
+- `domainName` - The domain name to get the favicon for.
+- `options` - Optional configuration:
+- `size` - Icon size in pixels (default: 32).
+
+**Returns:**
+
+- A string URL to the favicon image.
+
+**Example:**
+
+```typescript
+import { getFavicon } from "@ahm0xc/utils";
+
+// Get default favicon (32px)
+const favicon = getFavicon("example.com");
+
+// Get larger favicon (64px)
+const largeFavicon = getFavicon("example.com", { size: 64 });
+
+// Works with or without protocol
+const sameIcon = getFavicon("https://www.example.com");
 ```
 
 ## DOM Utilities
