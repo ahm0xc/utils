@@ -18,3 +18,20 @@
  */
 export const delay = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Capitalizes the first letter of a string.
+ *
+ * @param {string} str - The string to capitalize.
+ * @returns {string} A new string with the first letter capitalized.
+ *
+ * @example
+ * // Returns "Hello"
+ * capitalize("hello");
+ *
+ * @example
+ * // Returns "World"
+ * capitalize("world");
+ */
+export const capitalize = (str: string): string =>
+  str.charAt(0).toUpperCase() + str.slice(1);
