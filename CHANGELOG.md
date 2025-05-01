@@ -1,5 +1,11 @@
 # @ahm0xc/utils
 
+## 0.3.2
+
+### Patch Changes
+
+- b5edd27: fix tree shaking
+
 ## 0.3.1
 
 ### Patch Changes
