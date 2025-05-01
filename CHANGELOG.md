@@ -1,5 +1,11 @@
 # @ahm0xc/utils
 
+## 0.5.0
+
+### Minor Changes
+
+- 7825763: add getFavicon utility
+
 ## 0.4.1
 
 ### Patch Changes
