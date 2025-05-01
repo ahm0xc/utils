@@ -1,2 +1,10 @@
-export * from "./utils.js";
-export * as dom from "./dom/index.js";
+export {
+  delay,
+  capitalize,
+  isEmpty,
+  randomInt,
+  chunkArray,
+  uniqueArray,
+  sumArray,
+  shuffleArray,
+} from "./utils.js";

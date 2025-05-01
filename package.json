@@ -2,7 +2,20 @@
   "name": "@ahm0xc/utils",
   "version": "0.3.0",
   "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "description": "A collection of utility functions",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dom": {
+      "import": "./dist/dom/index.js",
+      "types": "./dist/dom/index.d.ts"
+    }
+  },
+  "sideEffects": false,
   "scripts": {
     "build": "tsc",
     "ci": "npm run build && npm run fmt:check && npm run exports:check && npm run test",
