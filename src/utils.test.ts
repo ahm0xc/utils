@@ -1,6 +1,6 @@
 import { test, expect } from "vitest";
 
-import { delay, capitalize } from "./utils.js";
+import { delay, capitalize, isEmpty } from "./utils.js";
 
 test("delay", async () => {
   const start = Date.now();
@@ -12,4 +12,10 @@ test("delay", async () => {
 test("capitalize", () => {
   expect(capitalize("hello")).toBe("Hello");
   expect(capitalize("world")).toBe("World");
+});
+
+test("isEmpty", () => {
+  expect(isEmpty(null)).toBe(true);
+  expect(isEmpty(undefined)).toBe(true);
+  expect(isEmpty("")).toBe(true);
 });

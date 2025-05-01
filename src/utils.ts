@@ -35,3 +35,29 @@ export const delay = (ms: number) =>
  */
 export const capitalize = (str: string): string =>
   str.charAt(0).toUpperCase() + str.slice(1);
+
+/**
+ * Checks if a value is empty.
+ *
+ * @param {any} value - The value to check.
+ * @returns {boolean} Returns true if the value is null, undefined, an empty string, an empty array, or an empty object.
+ *
+ * @example
+ * // Returns true
+ * isEmpty(null);
+ * isEmpty(undefined);
+ * isEmpty('');
+ * isEmpty([]);
+ * isEmpty({});
+ *
+ * @example
+ * // Returns false
+ * isEmpty('hello');
+ * isEmpty([1, 2, 3]);
+ * isEmpty({ key: 'value' });
+ */
+export const isEmpty = (value: any): boolean =>
+  value == null ||
+  (typeof value === "string" && value.trim() === "") ||
+  (Array.isArray(value) && value.length === 0) ||
+  (typeof value === "object" && Object.keys(value).length === 0);
