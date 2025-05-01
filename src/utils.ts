@@ -100,3 +100,20 @@ export const chunkArray = <T>(arr: T[], size: number): T[][] =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
     arr.slice(i * size, i * size + size),
   );
+
+/**
+ * Removes duplicate elements from an array.
+ *
+ * @template T - The type of elements in the array.
+ * @param {T[]} arr - The array to remove duplicates from.
+ * @returns {T[]} A new array with unique elements.
+ *
+ * @example
+ * // Returns [1, 2, 3]
+ * uniqueArray([1, 2, 2, 3, 1]);
+ *
+ * @example
+ * // Returns ['a', 'b', 'c']
+ * uniqueArray(['a', 'b', 'a', 'c', 'b']);
+ */
+export const uniqueArray = <T>(arr: T[]): T[] => [...new Set(arr)];

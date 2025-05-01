@@ -1,6 +1,13 @@
 import { test, expect } from "vitest";
 
-import { delay, capitalize, isEmpty, randomInt, chunkArray } from "./utils.js";
+import {
+  delay,
+  capitalize,
+  isEmpty,
+  randomInt,
+  chunkArray,
+  uniqueArray,
+} from "./utils.js";
 
 test("delay", async () => {
   const start = Date.now();
@@ -33,4 +40,10 @@ test("chunkArray", () => {
   const size = 2;
   const result = chunkArray(array, size);
   expect(result).toEqual([[1, 2], [3, 4], [5]]);
+});
+
+test("uniqueArray", () => {
+  const array = [1, 2, 2, 3, 1];
+  const result = uniqueArray(array);
+  expect(result).toEqual([1, 2, 3]);
 });
