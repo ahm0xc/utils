@@ -1,5 +1,11 @@
 # @ahm0xc/utils
 
+## 0.5.2
+
+### Patch Changes
+
+- 0f7251c: fix getFavicon examples
+
 ## 0.5.1
 
 ### Patch Changes
