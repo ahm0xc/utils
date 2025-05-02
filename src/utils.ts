@@ -207,12 +207,12 @@ export async function tryCatch<T, E = Error>(
  * @returns {string} The URL to the favicon image.
  *
  * @example
- * // Get default size (32px) favicon for example.com
- * const favicon = getFavicon('example.com');
+ * // Get default size (32px) favicon for https://example.com
+ * const favicon = getFavicon('https://example.com');
  *
  * @example
- * // Get a 64px favicon for github.com
- * const largeFavicon = getFavicon('github.com', { size: 64 });
+ * // Get a 64px favicon for https://github.com
+ * const largeFavicon = getFavicon('https://github.com', { size: 64 });
  */
 export const getFavicon = (
   url: string,
