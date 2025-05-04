@@ -1,6 +1,6 @@
 # @ahm0xc/utils
 
-A collection of utility functions for JavaScript and TypeScript projects.
+A lightweight collection of TypeScript utility functions for web and Node.js applications with full type safety.
 
 ## Installation
 
