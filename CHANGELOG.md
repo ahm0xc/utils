@@ -1,5 +1,11 @@
 # @ahm0xc/utils
 
+## 0.5.3
+
+### Patch Changes
+
+- fb916bd: update readme
+
 ## 0.5.2
 
 ### Patch Changes
