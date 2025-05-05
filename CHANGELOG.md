@@ -1,5 +1,11 @@
 # @ahm0xc/utils
 
+## 0.5.5
+
+### Patch Changes
+
+- cd04dd6: fix readme
+
 ## 0.5.4
 
 ### Patch Changes
