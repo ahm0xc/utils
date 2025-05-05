@@ -21,6 +21,7 @@ npm install @ahm0xc/utils
   - [shuffleArray](#shufflearrayarr-t-t)
   - [tryCatch](#trycatchpromiset-promisetrytcatchresultt-e)
   - [getFavicon](#getfavicondomainname-string-options--size-number---string)
+  - [isUrl](#isurlstr-string-boolean)
 - [DOM Utilities](#dom-utilities)
   - [select](#selectselector-string-parent-elementdocument-element--null)
   - [selectAll](#selectallselector-string-parent-elementdocument-element)
@@ -265,6 +266,30 @@ const largeFavicon = getFavicon("example.com", { size: 64 });
 
 // Works with or without protocol
 const sameIcon = getFavicon("https://www.example.com");
+```
+
+### isUrl(str: string): boolean
+
+Checks if a string is a valid URL.
+
+**Parameters:**
+
+- `str` - The string to check.
+
+**Returns:**
+
+- True if the string is a valid URL, false otherwise.
+
+**Example:**
+
+```typescript
+import { isUrl } from "@ahm0xc/utils";
+
+// Returns true
+isUrl("https://example.com");
+
+// Returns false
+isUrl("not a url");
 ```
 
 ## DOM Utilities
