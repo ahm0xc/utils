@@ -22,6 +22,7 @@ npm install @ahm0xc/utils
   - [tryCatch](#trycatchpromiset-promisetrytcatchresultt-e)
   - [getFavicon](#getfavicondomainname-string-options--size-number---string)
   - [isUrl](#isurlstr-string-boolean)
+  - [isValidEmail](#isvalidemailemail-string-boolean)
   - [truncateString](#truncatestringstr-string-maxlength-number-suffix-string-string)
 - [DOM Utilities](#dom-utilities)
   - [select](#selectselector-string-parent-elementdocument-element--null)
@@ -291,6 +292,30 @@ isUrl("https://example.com");
 
 // Returns false
 isUrl("not a url");
+```
+
+### isValidEmail(email: string): boolean
+
+Checks if a string is a valid email address.
+
+**Parameters:**
+
+- `email` - The string to check.
+
+**Returns:**
+
+- True if the string is a valid email address, false otherwise.
+
+**Example:**
+
+```typescript
+import { isValidEmail } from "@ahm0xc/utils";
+
+// Returns true
+isValidEmail("user@example.com");
+
+// Returns false
+isValidEmail("invalid-email");
 ```
 
 ### truncateString(str: string, maxLength: number, suffix?: string): string

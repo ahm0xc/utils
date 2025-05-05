@@ -13,6 +13,7 @@ import {
   getFavicon,
   isUrl,
   truncateString,
+  isValidEmail,
 } from "./utils.js";
 
 test("delay", async () => {
@@ -118,4 +119,9 @@ test("truncateString", () => {
   );
   expect(truncateString("Short", 10)).toBe("Short");
   expect(truncateString("Short", 10, " [more]")).toBe("Short");
+});
+
+test("isValidEmail", () => {
+  expect(isValidEmail("test@example.com")).toBe(true);
+  expect(isValidEmail("invalid-email")).toBe(false);
 });

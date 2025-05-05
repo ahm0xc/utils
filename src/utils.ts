@@ -278,3 +278,23 @@ export const truncateString = (
   if (str.length <= maxLength) return str;
   return `${str.slice(0, maxLength)}${suffix}`;
 };
+
+/**
+ * Validates if a string is a valid email address.
+ *
+ * @param {string} email - The email address to validate.
+ * @returns {boolean} True if the email is valid, false otherwise.
+ *
+ * @example
+ * // Check if an email is valid
+ * const isValid = isValidEmail('user@example.com'); // true
+ *
+ * @example
+ * // Check if an email is invalid
+ * const isValid = isValidEmail('invalid-email'); // false
+ */
+export const isValidEmail = (email: string): boolean => {
+  const re =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+};
