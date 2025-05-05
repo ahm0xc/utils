@@ -12,6 +12,7 @@ import {
   tryCatch,
   getFavicon,
   isUrl,
+  truncateString,
 } from "./utils.js";
 
 test("delay", async () => {
@@ -108,4 +109,13 @@ test("isUrl", () => {
   expect(isUrl("ftp://example.com")).toBe(true);
   expect(isUrl("mailto:test@example.com")).toBe(true);
   expect(isUrl("tel:1234567890")).toBe(true);
+});
+
+test("truncateString", () => {
+  expect(truncateString("This is a very long string", 9)).toBe("This is a...");
+  expect(truncateString("This is a very long string", 9, " [more]")).toBe(
+    "This is a [more]",
+  );
+  expect(truncateString("Short", 10)).toBe("Short");
+  expect(truncateString("Short", 10, " [more]")).toBe("Short");
 });

@@ -22,6 +22,7 @@ npm install @ahm0xc/utils
   - [tryCatch](#trycatchpromiset-promisetrytcatchresultt-e)
   - [getFavicon](#getfavicondomainname-string-options--size-number---string)
   - [isUrl](#isurlstr-string-boolean)
+  - [truncateString](#truncatestringstr-string-maxlength-number-suffix-string-string)
 - [DOM Utilities](#dom-utilities)
   - [select](#selectselector-string-parent-elementdocument-element--null)
   - [selectAll](#selectallselector-string-parent-elementdocument-element)
@@ -290,6 +291,35 @@ isUrl("https://example.com");
 
 // Returns false
 isUrl("not a url");
+```
+
+### truncateString(str: string, maxLength: number, suffix?: string): string
+
+Truncates a string to a specified maximum length and adds a suffix if truncated.
+
+**Parameters:**
+
+- `str` - The string to truncate.
+- `maxLength` - The maximum length of the string before truncation.
+- `suffix` - The suffix to add to the truncated string. Defaults to "...".
+
+**Returns:**
+
+- The truncated string with suffix if applicable, or the original string if shorter than maxLength.
+
+**Example:**
+
+```typescript
+import { truncateString } from "@ahm0xc/utils";
+
+// Returns "This is a..."
+truncateString("This is a very long string", 10);
+
+// Returns "This is a [more]"
+truncateString("This is a very long string", 10, " [more]");
+
+// Returns "Short" (unchanged)
+truncateString("Short", 10);
 ```
 
 ## DOM Utilities

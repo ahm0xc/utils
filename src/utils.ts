@@ -249,3 +249,32 @@ export const isUrl = (str: string): boolean => {
     return false;
   }
 };
+
+/**
+ * Truncates a string to a specified maximum length and adds a suffix if truncated.
+ *
+ * @param {string} str - The string to truncate.
+ * @param {number} maxLength - The maximum length of the string before truncation.
+ * @param {string} [suffix="..."] - The suffix to add to the truncated string.
+ * @returns {string} The truncated string with suffix if applicable.
+ *
+ * @example
+ * // Truncate a long string
+ * const truncated = truncateString('This is a very long string', 10); // 'This is a...'
+ *
+ * @example
+ * // Truncate with custom suffix
+ * const truncated = truncateString('This is a very long string', 10, ' [more]'); // 'This is a [more]'
+ *
+ * @example
+ * // String shorter than maxLength remains unchanged
+ * const unchanged = truncateString('Short', 10); // 'Short'
+ */
+export const truncateString = (
+  str: string,
+  maxLength: number,
+  suffix: string = "...",
+): string => {
+  if (str.length <= maxLength) return str;
+  return `${str.slice(0, maxLength)}${suffix}`;
+};
