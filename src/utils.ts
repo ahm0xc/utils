@@ -226,3 +226,26 @@ export const getFavicon = (
     return "";
   }
 };
+
+/**
+ * Checks if a string is a valid URL.
+ *
+ * @param {string} str - The string to check.
+ * @returns {boolean} True if the string is a valid URL, false otherwise.
+ *
+ * @example
+ * // Check if a string is a valid URL
+ * const isValidUrl = isUrl('https://example.com'); // true
+ *
+ * @example
+ * // Check if a string is not a valid URL
+ * const isValidUrl = isUrl('not a url'); // false
+ */
+export const isUrl = (str: string): boolean => {
+  try {
+    new URL(str);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};

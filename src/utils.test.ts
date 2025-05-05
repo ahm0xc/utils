@@ -11,6 +11,7 @@ import {
   shuffleArray,
   tryCatch,
   getFavicon,
+  isUrl,
 } from "./utils.js";
 
 test("delay", async () => {
@@ -98,4 +99,13 @@ test("getFavicon", () => {
   expect(favicon3).toBe(
     "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.example.com&size=32",
   );
+});
+
+test("isUrl", () => {
+  expect(isUrl("https://example.com")).toBe(true);
+  expect(isUrl("not a url")).toBe(false);
+  expect(isUrl("http://example.com/some-route")).toBe(true);
+  expect(isUrl("ftp://example.com")).toBe(true);
+  expect(isUrl("mailto:test@example.com")).toBe(true);
+  expect(isUrl("tel:1234567890")).toBe(true);
 });
