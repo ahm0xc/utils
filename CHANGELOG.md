@@ -1,5 +1,11 @@
 # @ahm0xc/utils
 
+## 0.5.4
+
+### Patch Changes
+
+- 5ef26cf: add isURL utility
+
 ## 0.5.3
 
 ### Patch Changes
