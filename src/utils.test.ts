@@ -14,6 +14,7 @@ import {
   isUrl,
   truncateString,
   isValidEmail,
+  pick,
 } from "./utils.js";
 
 test("delay", async () => {
@@ -124,4 +125,10 @@ test("truncateString", () => {
 test("isValidEmail", () => {
   expect(isValidEmail("test@example.com")).toBe(true);
   expect(isValidEmail("invalid-email")).toBe(false);
+});
+
+test("pick", () => {
+  const obj = { id: 1, name: "John", email: "john@example.com", age: 30 };
+  const result = pick(obj, ["id", "name"]);
+  expect(result).toEqual({ id: 1, name: "John" });
 });

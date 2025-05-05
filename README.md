@@ -24,6 +24,7 @@ npm install @ahm0xc/utils
   - [isUrl](#isurlstr-string-boolean)
   - [isValidEmail](#isvalidemailemail-string-boolean)
   - [truncateString](#truncatestringstr-string-maxlength-number-suffix-string-string)
+  - [pick](#pickobj-t-keys-k-pickt-k)
 - [DOM Utilities](#dom-utilities)
   - [select](#selectselector-string-parent-elementdocument-element--null)
   - [selectAll](#selectallselector-string-parent-elementdocument-element)
@@ -345,6 +346,35 @@ truncateString("This is a very long string", 10, " [more]");
 
 // Returns "Short" (unchanged)
 truncateString("Short", 10);
+```
+
+### pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K>
+
+Creates a new object with only the specified properties from the original object.
+
+**Parameters:**
+
+- `obj` - The source object.
+- `keys` - Array of keys to include in the new object.
+
+**Returns:**
+
+- A new object containing only the specified properties.
+
+**Example:**
+
+```typescript
+import { pick } from "@ahm0xc/utils";
+
+const user = {
+  id: 123,
+  name: "John Doe",
+  email: "john@example.com",
+  password: "secret",
+};
+
+// Returns { id: 123, name: "John Doe" }
+pick(user, ["id", "name"]);
 ```
 
 ## DOM Utilities

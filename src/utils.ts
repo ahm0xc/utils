@@ -298,3 +298,34 @@ export const isValidEmail = (email: string): boolean => {
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 };
+
+/**
+ * Creates a new object with only the specified keys from the original object.
+ *
+ * @param {T} obj - The source object to pick properties from.
+ * @param {K[]} keys - An array of keys to select from the object.
+ * @returns {Pick<T, K>} A new object containing only the specified keys.
+ *
+ * @example
+ * // Pick specific properties from an object
+ * const user = { id: 1, name: 'John', email: 'john@example.com', age: 30 };
+ * const userBasics = pick(user, ['id', 'name']); // { id: 1, name: 'John' }
+ *
+ * @example
+ * // Keys that don't exist in the original object are ignored
+ * const result = pick({ a: 1, b: 2 }, ['a', 'c']); // { a: 1 }
+ */
+export const pick = <T extends object, K extends keyof T>(
+  obj: T,
+  keys: K[],
+): Pick<T, K> => {
+  return keys.reduce(
+    (result, key) => {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        result[key] = obj[key];
+      }
+      return result;
+    },
+    {} as Pick<T, K>,
+  );
+};
